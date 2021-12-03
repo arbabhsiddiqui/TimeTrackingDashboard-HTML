@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+:root {
+  --Blue: #5847eb;
+
+  --Light: hsl(15, 100%, 70%);
+  --Soft-Blue: hsl(195, 74%, 62%);
+  --Light-pink: hsl(348, 100%, 68%);
+  --Lime: hsl(145, 58%, 55%);
+  --Violet: hsl(264, 64%, 52%);
+  --Soft: hsl(43, 84%, 65%);
+  --Very: hsl(226, 43%, 10%);
+  --Dark: hsl(235, 46%, 20%);
+  --Desaturated: hsl(235, 45%, 61%);
+  --Pale: hsl(236, 100%, 87%);
+  --font: "Rubik", sans-serif;
+}
+
+body {
+  font-size: 18px;
+  background: var(--Very);
+  font-weight: 300;
+  font-family: var(--font);
+  min-height: 100vh;
+}
+
+.attribution {
+  padding: 2rem 0;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+main {
+  margin: 50px 30px;
+  display: grid;
+  gap: 50px;
+}
+
+.main-card {
+  background: var(--Blue);
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 80px;
+  &__profile {
+    z-index: 2;
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+    }
+  }
+  &__profile-text {
+    p {
+      color: hsla(0, 0%, 100%, 0.603);
+      font-size: 14px;
+    }
+    h4 {
+      color: rgba(255, 255, 255, 0.876);
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+  }
+  &__details {
+    z-index: -1;
+    top: 100px;
+    width: 100%;
+    position: absolute;
+    padding: 1.5rem 0 1.5rem 0;
+    border-radius: 0 0 10px 10px;
+    background: var(--Dark);
+    color: #7477bc;
+    display: grid;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    background: var(--Dark);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card-with-bg {
+  border-radius: 10px;
+  position: relative;
+  height: 140px;
+  background: #000;
+  &__background {
+    border-radius: 10px 10px 0 0;
+    padding: 0 20px;
+    background: var(--Light);
+    display: flex;
+    justify-content: end;
+
+    img {
+      width: 60px;
+    }
+
+    &--blue {
+      background: var(--Soft-Blue);
+    }
+
+    &--pink {
+      background: var(--Light-pink);
+    }
+
+    &--lime {
+      background: var(--Lime);
+    }
+
+    &--violet {
+      background: var(--Violet);
+    }
+    &--yellow {
+      background: var(--Soft);
+    }
+  }
+
+  &__text-container {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    top: 35px;
+    border-radius: 10px;
+    background: var(--Dark);
+    color: #fff;
+    padding: 1.5rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__left-text {
+    h6 {
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    h3 {
+      font-weight: 300;
+      font-size: 2rem;
+    }
+  }
+
+  &__right-text {
+    color: var(--Pale);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+.active {
+  color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 25px;
+
+    .main-card {
+      grid-row: span 2;
+
+      &__profile {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        width: 180px;
+        height: 100px;
+        p {
+          font-size: 12px;
+        }
+
+        h4 {
+          font-size: 1.5rem;
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  .main-card {
+    margin-bottom: 104px;
+
+    &__details {
+      padding-left: 20px;
+      top: 205px;
+      gap: 10px;
+      grid-template-columns: 1fr;
+      text-align: left;
+      padding: 2rem 0 1rem 1rem;
+    }
+  }
+}
